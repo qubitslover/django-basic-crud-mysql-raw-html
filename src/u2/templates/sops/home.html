@@ -1,0 +1,19 @@
+<a href=""><h1> Seller Home</h1></a>
+<a href="newproduct"><h3>Add Product + </h3> </a>
+<br>
+<h3>Products listed {{ products.count}}</h3>
+{% for product in products %}
+
+
+<div style="border:2px solid orange">
+{{product.name}}<br>
+{{product.status}}<br>
+{{product.price}}<br>
+{{product.id}}<br>
+
+    <a href="{% url 'updateproduct' id=product.id %}">Update </a>
+    <a href="{% url 'deleteproduct' id=product.id %}"> Delete</a>
+</div>
+<br>
+
+{% endfor %}
